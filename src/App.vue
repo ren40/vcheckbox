@@ -5,7 +5,9 @@ import vcheckbox from "./components/VCheckbox.vue";
 
 import { ref } from "vue";
 
-const idCheckBox = ref("test1");
+const idCheckBoxExampleOne = ref("test1");
+const idCheckBoxExampleTwo = ref("test2");
+const idCheckBoxExampleThree = ref("test3");
 </script>
 
 <template>
@@ -13,7 +15,31 @@ const idCheckBox = ref("test1");
     <h1>VCheckbox</h1>
     <div class="section_body">
       <p>Пример компонента VCheckbox</p>
-      <vcheckbox :idCheckBox="idCheckBox" labelText="Hello world"></vcheckbox>
+      <div class="example">
+        <vcheckbox
+          :idCheckBox="idCheckBoxExampleOne"
+          labelText="Hello world"
+        ></vcheckbox>
+      </div>
+      <p>Пример с другими режимами</p>
+      <div class="other_example">
+        <div class="disabled_example">
+          <p>Заблокированный</p>
+          <vcheckbox
+            :idCheckBox="idCheckBoxExampleTwo"
+            disabled
+            labelText="Hello world"
+          ></vcheckbox>
+        </div>
+        <div class="slot_example">
+          <p>Использование slot</p>
+          <vcheckbox :idCheckBox="idCheckBoxExampleThree">
+            <template #v_label>
+              <label :for="idCheckBoxExampleThree"> Other message</label>
+            </template>
+          </vcheckbox>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +51,7 @@ const idCheckBox = ref("test1");
   align-items: center;
   flex-direction: column;
   margin-top: 10px;
+  width: 100%;
 }
 
 h1::first-letter {
@@ -38,5 +65,19 @@ h1 {
 .section_body {
   display: flex;
   flex-direction: column;
+  width: 50vw;
+}
+
+.section_body p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.other_example {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 </style>

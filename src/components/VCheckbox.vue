@@ -64,10 +64,12 @@ const changeChecked = (event) => {
   margin-right: 5px;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
 }
 
 :slotted(label)::before {
   content: "";
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +87,15 @@ const changeChecked = (event) => {
 
 input[type="checkbox"]:checked + :slotted(label)::before {
   background-color: red;
-  content: "V";
+  content: "✓";
   color: #fff;
+}
+
+input[type="checkbox"]:disabled + :slotted(label) {
+  opacity: 0.5;
+}
+
+input[type="checkbox"]:disabled + :slotted(label):hover::before {
+  cursor: auto;
 }
 </style>
