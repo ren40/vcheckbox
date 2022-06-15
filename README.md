@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# Тестовая задача
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Задание:
+Создать компонент checkbox:
+ - использовать v-model для состояния checkbox (true/false) 
+ - принимать все html-атрибуты нативного input[type=checkbox] 
+ - содержимое слота по умолчанию отображать как label справа от checkbox. Нажатие на label, должно менять состояние переключателя
 
-## Recommended IDE Setup
+# Установка
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+    npm install
+
+# Запуск
+
+    npm run serve
